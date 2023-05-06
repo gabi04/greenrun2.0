@@ -3,6 +3,7 @@ import axios from "axios";
 import { HistoryStyles } from "./HistoryStyles";
 import moment from "moment";
 import Sport from "./Sport";
+import LeftArrow from "../../svgs/LeftArrow";
 
 const History = (): JSX.Element => {
   const currentDate = moment().format("DD MMMM");
@@ -32,6 +33,7 @@ const History = (): JSX.Element => {
 
   return (
     <HistoryStyles>
+      <LeftArrow />
       <h1 className="history__title">History</h1>
       <p className="history__text--one">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
