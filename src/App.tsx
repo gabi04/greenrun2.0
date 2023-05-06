@@ -4,6 +4,9 @@ import Footer from "./Components/Footer";
 import Scenes from "./scenes";
 import GreenRunContextProvider from "./contexts/GreenRunContext";
 
+//TODO eliminar bootstrap
+//TODO mirar si eliminar moment
+
 const App = (): JSX.Element => {
   return (
     <GreenRunContextProvider>
