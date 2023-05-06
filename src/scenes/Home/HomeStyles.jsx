@@ -55,5 +55,6 @@ export const HomeStyles = styled.div`
     font-size: 34px;
     line-height: 122.02%;
     color: #fefefe;
+    object-fit: cover;
   }
 `;
