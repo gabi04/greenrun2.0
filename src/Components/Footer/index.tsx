@@ -27,7 +27,9 @@ const Footer = () => {
       >
         <HistorySvg />
       </button>
-      <LogOut />
+      <button className="footer__btn">
+        <LogOut />
+      </button>
     </Footertyled>
   );
 };
