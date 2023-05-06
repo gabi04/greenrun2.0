@@ -4,10 +4,15 @@ import { HistoryStyles } from "./HistoryStyles";
 import moment from "moment";
 import Sport from "./Sport";
 import LeftArrow from "../../svgs/LeftArrow";
+import { useContext } from "react";
+import { GreenRunContext } from "../../contexts/GreenRunContext";
+import { SCENES } from "../../contexts/GreenRunContext";
 
 const History = (): JSX.Element => {
   const currentDate = moment().format("DD MMMM");
   const [sports, setSports] = useState<string[]>([]);
+  const greenRunContext = useContext(GreenRunContext) as any;
+  const { setCurrentScene } = greenRunContext;
 
   //TODO revisar que no este llamando de nuevo a servidor en el re render
   const getSports = useCallback(() => {
@@ -33,7 +38,12 @@ const History = (): JSX.Element => {
 
   return (
     <HistoryStyles>
-      <LeftArrow />
+      <button
+        className="history__back__btn"
+        onClick={() => setCurrentScene(SCENES.HOME)}
+      >
+        <LeftArrow />
+      </button>
       <h1 className="history__title">History</h1>
       <p className="history__text--one">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.

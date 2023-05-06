@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const HistoryStyles = styled.div`
   height: inherit;
   overflow-y: scroll;
+  .history__back__btn {
+    border: none;
+    background: none;
+  }
   .history__title {
     margin: 24px 0 8px;
     color: rgb(22, 22, 23);
