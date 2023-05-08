@@ -1,15 +1,22 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/jsx-no-comment-textnodes */
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState, FormEvent } from "react";
 import { LoginStyles } from "./LoginStyles";
+import { auth } from "../../firebase";
 
 const Login = (): JSX.Element => {
   const [user, setUser] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const handleLogin = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("user", user);
-    console.log("password", password);
+    signInWithEmailAndPassword(auth, user, password)
+      .then((userCredential) => {
+        console.log(userCredential);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <LoginStyles>
@@ -39,6 +46,8 @@ const Login = (): JSX.Element => {
           </label>
 
           <a className="login__form__link">Forgot your password?</a>
+          <a className="login__form__link">Do not you have an account yet?</a>
+
           <input className="login__form__submit" type="submit" value="Login" />
         </form>
       </div>

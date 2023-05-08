@@ -2,7 +2,7 @@ import { AppStyled } from "./AppStyles";
 import Footer from "./Components/Footer";
 import Scenes from "./scenes";
 import GreenRunContextProvider from "./contexts/GreenRunContext";
-import Login from "./scenes/Login";
+import Login from "./scenes/Auth";
 
 //TODO eliminar bootstrap
 //TODO mirar si eliminar moment
