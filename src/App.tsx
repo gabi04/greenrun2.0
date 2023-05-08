@@ -1,31 +1,12 @@
 import { AppStyled } from "./AppStyles";
-import Footer from "./Components/Footer";
-import Scenes from "./scenes";
 import GreenRunContextProvider from "./contexts/GreenRunContext";
-import Login from "./scenes/Auth";
-
-//TODO eliminar bootstrap
-//TODO mirar si eliminar moment
+import AppContent from "./AppContent";
 
 const App = (): JSX.Element => {
-  let logged = false;
-
   return (
     <GreenRunContextProvider>
       <AppStyled>
-        {logged ? (
-          <div className="app__content">
-            <div className="app__content__body">
-              <Scenes />
-            </div>
-
-            <div className="app__content__footer">
-              <Footer />
-            </div>
-          </div>
-        ) : (
-          <Login />
-        )}
+        <AppContent />
       </AppStyled>
     </GreenRunContextProvider>
   );
