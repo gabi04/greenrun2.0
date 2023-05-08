@@ -61,6 +61,7 @@ export const LoginStyles = styled.div`
     font-size: 16px;
     line-height: 122.02%;
     color: rgba(35, 34, 50, 0.8);
+    display: block;
   }
   .login__form__submit {
     display: block;

@@ -13,9 +13,12 @@ export enum SCENES {
 
 export default function GreenRunContextProvider({ children }: Props) {
   const [currentScene, setCurrentScene] = useState<string>(SCENES.HOME);
+  const [logged, setLogged] = useState<boolean>(false);
 
   return (
-    <GreenRunContext.Provider value={{ currentScene, setCurrentScene }}>
+    <GreenRunContext.Provider
+      value={{ currentScene, setCurrentScene, logged, setLogged }}
+    >
       {children}
     </GreenRunContext.Provider>
   );

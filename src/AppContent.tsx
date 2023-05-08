@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { GreenRunContext } from "./contexts/GreenRunContext";
 import Scenes from "./scenes";
 import Footer from "./Components/Footer";
-import Login from "./scenes/Auth";
+import Auth from "./scenes/Auth";
 
 const AppContent = () => {
   const greenRunContext = useContext(GreenRunContext) as any;
@@ -19,7 +19,7 @@ const AppContent = () => {
       </div>
     </div>
   ) : (
-    <Login />
+    <Auth />
   );
 };
 
